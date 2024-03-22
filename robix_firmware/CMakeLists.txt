@@ -14,7 +14,6 @@ find_package(std_msgs REQUIRED)
 find_package(geometry_msgs REQUIRED)
 find_package(nav_msgs REQUIRED)
 find_package(sensor_msgs REQUIRED)
-find_package(hardware_interface REQUIRED)
 find_package(pluginlib REQUIRED)
 find_package(rclcpp_lifecycle REQUIRED)
 find_package(tf2_ros REQUIRED)
@@ -26,10 +25,6 @@ pkg_check_modules(SERIAL libserial)
 
 ament_python_install_package(${PROJECT_NAME})
 
-    
-add_library(${PROJECT_NAME} SHARED 
-  src/robix_interface.cpp
-)  
 
 
 target_include_directories(${PROJECT_NAME} PRIVATE 
@@ -37,13 +32,7 @@ target_include_directories(${PROJECT_NAME} PRIVATE
   "${SERIAL_INCLUDE_DIRS}"
 )
 
-target_link_libraries(${PROJECT_NAME} "${SERIAL_LDFLAGS}")
-ament_target_dependencies(${PROJECT_NAME}
-  hardware_interface
-  pluginlib
-  rclcpp
-  rclcpp_lifecycle
-)
+
 
 pluginlib_export_plugin_description_file(hardware_interface robix_interface.xml)
 
@@ -93,11 +82,5 @@ ament_export_libraries(
   ${PROJECT_NAME}
 )
 
-ament_export_dependencies(
-  hardware_interface
-  pluginlib
-  rclcpp
-  rclcpp_lifecycle
-)
 
 ament_package()
