@@ -1,5 +1,16 @@
 En esta version, el mapa se genero, falta probar que el mapa se genere con el movimiento del robot, tenemos las publicaciones de los frames /odom /map y las de urdf que contienen a /laser
 
+Para clonar este git se debe
+
+`mkdir my_ws`             # Crea un directorio llamado my_ws
+`ls my_ws`                 # Lista el contenido del directorio my_ws
+`mkdir src`                # Crea un directorio llamado src dentro de my_ws
+`ls src`                 # Cambia al directorio src
+`git clone <URL_del_repositorio>`   # Clona el repositorio especificado por la URL
+`cd my_ws` 
+`colcon build` 
+
+
 **Cosas que instalar**
 
 - `sudo apt-get install ros-humble-navigation2 ros-humble-nav2-bringup`, para el SLAM
