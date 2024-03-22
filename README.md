@@ -18,18 +18,18 @@ En esta version, el mapa se genero, falta probar que el mapa se genere con el mo
 ---- **Comandos que reemplazan a ROS2CONTROL** ----
 
 - `ros2 launch robix_controller joystick_teleop.launch` para iniciar conexión con el joystick.
-- `ros2 run robix_firmware simple_serial_transmitter` para enviar comandos de `/cmd_vel` a Arduino.
-- `ros2 run robix_firmware velocidad_ruedas_publisher` para enviar datos de encoder desde Arduino hasta Raspberry.
-- `ros2 run robix_firmware odometry_publisher` para publicar los datos de odometría.
-- `ros2 run robix_firmware tf_transmitter` para generar la publicación de las transformadas desde odometría a map.
+- `ros2 run robix_firmware simple_serial_transmitter.py` para enviar comandos de `/cmd_vel` a Arduino.
+- `ros2 run robix_firmware velocidad_ruedas_publisher.py` para enviar datos de encoder desde Arduino hasta Raspberry.
+- `ros2 run robix_firmware odometry_publisher.py` para publicar los datos de odometría.
+- `ros2 run robix_firmware tf_transmitter.py` para generar la publicación de las transformadas desde odometría a map.
 
 ---- **Iniciar cuerpo del robot** ----
 
-- `ros2 launch robix_description display.launch` inicia todas las transformadas.
+- `ros2 launch robix_description display.launch.py` inicia todas las transformadas.
 
 ---- **Iniciar el Rplidar** ----
 
-- `ros2 launch rplidar_ros2 rplidar.launch`
+- `ros2 launch rplidar_ros2 rplidar.launch.py`
 
   Si todo está bien con `ros2 topic`, debería visualizar los tópicos `/TF`, `/ODOM` y `/SCAN`.
 
@@ -38,8 +38,8 @@ En esta version, el mapa se genero, falta probar que el mapa se genere con el mo
 
 - `ros2 launch nav2_bringup navigation_launch.py`
 
-ros2 launch slam_toolbox online_async_launch.py
-rviz2 rviz2 (Hablitar TF, MAP,ODOMETRY) y selecionar fixed_frame "map"
+- `ros2 launch slam_toolbox online_async_launch.py`
+- `rviz2 rviz2` (Hablitar TF, MAP,ODOMETRY) y selecionar fixed_frame "map"
 
 
 
