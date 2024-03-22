@@ -3,11 +3,11 @@ En esta version, el mapa se genero, falta probar que el mapa se genere con el mo
 Para clonar este git se debe
 
 - `mkdir my_ws`             # Crea un directorio llamado my_ws
-- `ls my_ws`                 # Lista el contenido del directorio my_ws
+- `cd my_ws`                 # Cambia al directorio  my_ws
 - `mkdir src`                # Crea un directorio llamado src dentro de my_ws
-- `ls src`                 # Cambia al directorio src
+- `cd src`                 # Cambia al directorio src
 - `git clone <URL_del_repositorio>`   # Clona el repositorio especificado por la URL
-- `cd my_ws` 
+- `cd my_ws`  # Vuelve al directorio  my_ws
 - `colcon build` 
 
 
